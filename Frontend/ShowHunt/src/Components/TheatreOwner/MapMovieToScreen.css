@@ -1,0 +1,275 @@
+/* MapMovieToScreen.css - Dark Theme */
+
+.map-movie-container {
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #111111;
+}
+
+.form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #1a1a1a 0%, #222222 100%);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  padding: 40px;
+  margin-top: 50px;
+  border: 1px solid #333333;
+}
+
+.form-title {
+  text-align: center;
+  color: #8b9bf7;
+  font-size: 2.2em;
+  margin-bottom: 30px;
+  font-weight: 600;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(139, 155, 247, 0.3);
+}
+
+.form-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(45deg, #667eea, #8b9bf7);
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+}
+
+.movie-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group-map {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-label-map {
+  font-weight: 600;
+  color: #e2e8f0;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-input-map,
+.form-select {
+  padding: 12px 16px;
+  border: 2px solid #333333;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: #1a1a1a;
+  color: #e2e8f0;
+}
+
+.form-input-map:focus,
+.form-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+  background-color: #222222;
+}
+
+.form-input-map:hover,
+.form-select:hover {
+  border-color: #8b9bf7;
+  background-color: #1f1f1f;
+}
+
+.form-input-map::placeholder {
+  color: #4a5568;
+}
+
+.form-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%238b9bf7' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.form-select option {
+  padding: 8px;
+  background-color: #1a1a1a;
+  color: #e2e8f0;
+  border: none;
+}
+
+.submit-btn {
+  background: linear-gradient(45deg, #667eea, #8b9bf7);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn:hover {
+  background: linear-gradient(45deg, #4c63d2, #667eea);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn:disabled {
+  background: #2d3748;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  color: #718096;
+}
+
+/* Date input styling */
+.form-input-map[type="date"] {
+  position: relative;
+}
+
+.form-input-map[type="date"]::-webkit-calendar-picker-indicator {
+  color: #8b9bf7;
+  opacity: 1;
+  cursor: pointer;
+  filter: invert(1);
+}
+
+.form-input-map[type="date"]::-webkit-datetime-edit {
+  color: #e2e8f0;
+}
+
+.form-input-map[type="date"]::-webkit-datetime-edit-text {
+  color: #718096;
+}
+
+/* Time input styling */
+.form-input-map[type="time"] {
+  position: relative;
+}
+
+.form-input-map[type="time"]::-webkit-calendar-picker-indicator {
+  color: #8b9bf7;
+  opacity: 1;
+  cursor: pointer;
+  filter: invert(1);
+}
+
+.form-input-map[type="time"]::-webkit-datetime-edit {
+  color: #e2e8f0;
+}
+
+.form-input-map[type="time"]::-webkit-datetime-edit-text {
+  color: #718096;
+}
+
+/* Dark theme scrollbar styling */
+.map-movie-container ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.map-movie-container ::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 4px;
+}
+
+.map-movie-container ::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+.map-movie-container ::-webkit-scrollbar-thumb:hover {
+  background: #4a5568;
+}
+
+/* Selection styling for dark theme */
+.map-movie-container ::selection {
+  background: rgba(102, 126, 234, 0.3);
+  color: #e2e8f0;
+}
+
+/* Autofill styling for dark theme */
+.form-input-map:autofill,
+.form-input-map:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #1a1a1a inset;
+  -webkit-text-fill-color: #e2e8f0 !important;
+}
+
+.form-input-map:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0 30px #1f1f1f inset;
+  -webkit-text-fill-color: #e2e8f0 !important;
+}
+
+.form-input-map:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px #222222 inset;
+  -webkit-text-fill-color: #e2e8f0 !important;
+}
+
+/* Focus styles for accessibility */
+.submit-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.5);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .form-wrapper {
+    margin: 20px;
+    padding: 30px 20px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .form-title {
+    font-size: 1.8em;
+  }
+  
+  .map-movie-container {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-wrapper {
+    margin: 10px;
+    padding: 20px 15px;
+  }
+  
+  .form-title {
+    font-size: 1.5em;
+  }
+  
+  .form-input-map,
+  .form-select,
+  .submit-btn {
+    font-size: 14px;
+  }
+}

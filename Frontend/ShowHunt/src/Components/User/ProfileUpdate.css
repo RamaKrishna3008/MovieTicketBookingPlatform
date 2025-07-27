@@ -1,0 +1,216 @@
+/* ProfileUpdate.css - Dark Theme */
+
+.update-user-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #222222 100%);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  border: 1px solid #333333;
+}
+
+.update-user-container h1 {
+  text-align: center;
+  color: #8b9bf7;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(139, 155, 247, 0.3);
+}
+
+.update-form {
+  background: #111111;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  border: 1px solid #333333;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.form-row:last-of-type {
+  justify-content: center;
+}
+
+.form-row label {
+  flex: 1;
+  min-width: 250px;
+  font-weight: 600;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-row input {
+  padding: 0.875rem 1rem;
+  border: 2px solid #333333;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #1a1a1a;
+  color: #e2e8f0;
+  font-family: inherit;
+}
+
+.form-row input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+  transform: translateY(-1px);
+  background: #222222;
+}
+
+.form-row input:hover:not(:read-only) {
+  border-color: #8b9bf7;
+  background: #1f1f1f;
+}
+
+.form-row input[readonly] {
+  background-color: #0f0f0f;
+  color: #718096;
+  cursor: not-allowed;
+  border-color: #332828;
+}
+
+.form-row input[readonly]:hover {
+  border-color: #2d2d2d;
+  background-color: #0f0f0f;
+}
+
+.form-row input::placeholder {
+  color: #4a5568;
+}
+
+.update-button {
+  background: linear-gradient(135deg, #667eea 0%, #8b9bf7 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.update-button:hover {
+  background: linear-gradient(135deg, #4c63d2 0%, #667eea 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.update-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
+}
+
+/* Dark theme scrollbar styling */
+.update-user-container ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.update-user-container ::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 4px;
+}
+
+.update-user-container ::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+.update-user-container ::-webkit-scrollbar-thumb:hover {
+  background: #4a5568;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .update-user-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .update-form {
+    padding: 1.5rem;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .form-row label {
+    min-width: unset;
+  }
+  
+  .update-user-container h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .update-user-container {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .update-form {
+    padding: 1rem;
+  }
+  
+  .update-button {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Loading state for button */
+.update-button:disabled {
+  background: #2d3748;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  color: #718096;
+}
+
+/* Focus styles for accessibility */
+.update-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.5);
+}
+
+/* Selection styling for dark theme */
+.update-user-container ::selection {
+  background: rgba(102, 126, 234, 0.3);
+  color: #e2e8f0;
+}
+
+/* Smooth animations */
+* {
+  box-sizing: border-box;
+}
+
+.update-user-container * {
+  transition: all 0.2s ease;
+}
+
+.form-row input:autofill,
+.form-row input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #1a1a1a inset;
+  -webkit-text-fill-color: #e2e8f0 !important;
+}

@@ -1,0 +1,313 @@
+/* Container and main layout */
+.update-owner-container {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header styling */
+.update-owner-container h1 {
+  text-align: center;
+  color: #32679d;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.update-owner-container h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+/* Form styling */
+.update-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Label styling */
+.update-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #34495e;
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+}
+
+/* Input and textarea base styling */
+.update-form input,
+.update-form textarea {
+  padding: 12px 16px;
+  border: 2px solid #e0e6ed;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  color: #2c3e50;
+  margin-top: 5px;
+}
+
+.update-form input:focus,
+.update-form textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Read-only input styling */
+.update-form input[readonly] {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  cursor: not-allowed;
+  border-color: #dee2e6;
+}
+
+.update-form input[readonly]:focus {
+  box-shadow: none;
+  transform: none;
+  border-color: #dee2e6;
+}
+
+/* Textarea specific styling */
+.update-form textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+/* Input field containers */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Button styling */
+.update-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.update-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.update-button:hover::before {
+  left: 100%;
+}
+
+.update-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.update-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+}
+
+/* Loading state */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  flex-direction: column;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  color: #6c757d;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Form validation states */
+.update-form input:invalid,
+.update-form textarea:invalid {
+  border-color: #e74c3c;
+}
+
+.update-form input:valid,
+.update-form textarea:valid {
+  border-color: #27ae60;
+}
+
+/* Required field indicator */
+.update-form label::after {
+  content: ' *';
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.update-form label[data-readonly]::after {
+  content: '';
+}
+
+/* Error states */
+.error-message {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 5px;
+  display: none;
+}
+
+.form-group.error .error-message {
+  display: block;
+}
+
+.form-group.error input,
+.form-group.error textarea {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+/* Success states */
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #c3e6cb;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .update-owner-container {
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  .update-owner-container h2 {
+    font-size: 1.5rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .update-form input,
+  .update-form textarea {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+  
+  .update-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .update-owner-container {
+    margin: 10px;
+    padding: 15px;
+  }
+  
+  .update-owner-container h2 {
+    font-size: 1.3rem;
+  }
+  
+  .update-form {
+    gap: 15px;
+  }
+  
+  .update-form input,
+  .update-form textarea {
+    padding: 8px 12px;
+  }
+}
+
+/* Custom focus styles for better accessibility */
+.update-form input:focus-visible,
+.update-form textarea:focus-visible,
+.update-button:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Smooth page transitions */
+.update-owner-container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Print styles */
+@media print {
+  .update-button {
+    display: none;
+  }
+  
+  .update-owner-container {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}

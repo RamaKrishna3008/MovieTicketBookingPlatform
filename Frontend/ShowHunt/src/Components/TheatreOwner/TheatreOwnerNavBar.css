@@ -1,0 +1,414 @@
+/* TheatreOwnerNavBar.css - Dark Theme */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.theatre-owner-container {
+  min-height: 100vh;
+  background: #111111;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+/* Add subtle animated background pattern */
+.theatre-owner-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 155, 247, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(102, 126, 234, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.owner-navbar {
+  background: linear-gradient(135deg, #1a1a1a 0%, #222222 100%);
+  padding: 0 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+  border-bottom: 1px solid #333333;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand h3 {
+  color: #8b9bf7;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(139, 155, 247, 0.3);
+  margin: 0;
+  background: linear-gradient(135deg, #667eea, #8b9bf7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e2e8f0;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  background: linear-gradient(135deg, #2a2a2a 0%, #333333 100%);
+  border: 1px solid #444444;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.nav-link:hover::before {
+  left: 100%;
+}
+
+.nav-link:hover {
+  background: linear-gradient(135deg, #667eea 0%, #8b9bf7 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  border-color: #667eea;
+}
+
+.nav-link:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.nav-icon {
+  font-size: 16px;
+  display: inline-block;
+  min-width: 16px;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover .nav-icon {
+  transform: scale(1.1);
+}
+
+/* Active link styling */
+.nav-link.active {
+  background: linear-gradient(135deg, #667eea 0%, #8b9bf7 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
+  border-color: #667eea;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #8b9bf7);
+  border-radius: 1px;
+}
+
+/* Enhanced hamburger menu */
+.hamburger {
+  display: none;
+  background: linear-gradient(135deg, #2a2a2a 0%, #333333 100%);
+  border: 1px solid #444444;
+  color: #e2e8f0;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+  background: linear-gradient(135deg, #667eea 0%, #8b9bf7 100%);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Pulse animation for notifications/active states */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+  }
+}
+
+.nav-link.notification {
+  animation: pulse 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .navbar-links {
+    gap: 10px;
+  }
+  
+  .nav-link {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+  
+  .navbar-brand h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .owner-navbar {
+    flex-direction: column;
+    padding: 15px;
+    min-height: auto;
+  }
+  
+  .navbar-brand {
+    margin-bottom: 15px;
+  }
+  
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .nav-link {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+  
+  .main-content {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .owner-navbar {
+    padding: 10px;
+  }
+  
+  .navbar-brand h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  .navbar-links {
+    gap: 8px;
+  }
+  
+  .nav-link {
+    padding: 8px 12px;
+    font-size: 11px;
+    border-radius: 15px;
+  }
+  
+  .nav-icon {
+    font-size: 14px;
+  }
+  
+  .main-content {
+    padding: 10px;
+  }
+}
+
+/* Enhanced dropdown menu for mobile */
+@media (max-width: 600px) {
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #222222 100%);
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    backdrop-filter: blur(10px);
+  }
+  
+  .navbar-links.show {
+    display: flex;
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  .nav-link {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #2a2a2a 0%, #333333 100%);
+  }
+  
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Hide hamburger on larger screens */
+@media (min-width: 601px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/* Slide down animation for mobile menu */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth scrolling for the main content */
+.main-content {
+  scroll-behavior: smooth;
+  background: #111111;
+  min-height: calc(100vh - 70px);
+}
+
+/* Enhanced loading animation for route transitions */
+.main-content > * {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom dark theme scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #333333 0%, #667eea 100%);
+  border-radius: 5px;
+  border: 1px solid #2a2a2a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #667eea 0%, #8b9bf7 100%);
+}
+
+/* Selection styling for dark theme */
+::selection {
+  background: rgba(102, 126, 234, 0.3);
+  color: #e2e8f0;
+}
+
+/* Focus styles for accessibility */
+.nav-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.5);
+}
+
+.hamburger:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.5);
+}
+
+/* Loading spinner for dynamic content */
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333333;
+  border-top: 2px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Tooltip styling */
+.nav-link[data-tooltip] {
+  position: relative;
+}
+
+.nav-link[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  color: #e2e8f0;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333333;
+  opacity: 0;
+  animation: tooltipFadeIn 0.3s ease forwards;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}

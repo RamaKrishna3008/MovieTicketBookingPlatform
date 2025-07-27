@@ -1,0 +1,385 @@
+/* AddTheatreOwner.css - Google Pay Dark Theme */
+:root {
+  --primary-dark: #1a1a1a;
+  --secondary-dark: #2d2d2d;
+  --card-dark: #333333;
+  --accent-blue: #4285f4;
+  --accent-green: #34a853;
+  --accent-orange: #fbbc04;
+  --accent-red: #ea4335;
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-muted: #9e9e9e;
+  --border-color: #444444;
+  --shadow-light: rgba(0, 0, 0, 0.2);
+  --shadow-medium: rgba(0, 0, 0, 0.4);
+  --shadow-heavy: rgba(0, 0, 0, 0.6);
+  --gradient-primary: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+  --gradient-card: linear-gradient(135deg, #333333 0%, #2d2d2d 100%);
+  --hover-bg: rgba(255, 255, 255, 0.05);
+  --input-bg: rgba(255, 255, 255, 0.08);
+  --input-focus: rgba(66, 133, 244, 0.2);
+}
+
+/* Form Container */
+.form-container-theatre {
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: var(--text-primary);
+  padding: 120px 24px 40px;
+  font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.form-wrapper-theatre {
+  max-width: 900px;
+  width: 100%;
+  background: var(--gradient-card);
+  border-radius: 24px;
+  padding: 48px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 40px var(--shadow-medium);
+  position: relative;
+  overflow: hidden;
+}
+
+.form-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Form Heading */
+.form-heading {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 48px;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-blue) 10%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.form-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+/* Registration Form */
+.registration-form {
+  position: relative;
+  z-index: 1;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Input Labels */
+.input-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Form Inputs */
+.form-input-theatre,
+.form-textarea-theatre {
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 16px;
+  color: var(--text-primary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  font-family: inherit;
+}
+
+.form-input-theatre:focus,
+.form-textarea-theatre:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px var(--input-focus);
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.form-input-theatre::placeholder,
+.form-textarea-theatre::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.form-textarea-theatre {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+/* Submit Button */
+.submit-btn-theatre {
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 16px;
+  padding: 20px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 24px rgba(66, 133, 244, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-btn-theatre::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.submit-btn-theatre:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(66, 133, 244, 0.4);
+}
+
+.submit-btn-theatre:hover::before {
+  opacity: 1;
+}
+
+.submit-btn-theatre:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(66, 133, 244, 0.3);
+}
+
+/* Input Validation States */
+.form-input-theatre:invalid,
+.form-textarea-theatre:invalid {
+  border-color: var(--accent-red);
+}
+
+.form-input-theatre:valid,
+.form-textarea-theatre:valid {
+  border-color: var(--accent-green);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .form-container {
+    padding: 100px 16px 40px;
+  }
+
+  .form-wrapper {
+    padding: 40px 32px;
+    border-radius: 16px;
+  }
+
+  .form-heading {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+
+  .form-grid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    padding: 80px 12px 32px;
+  }
+
+  .form-wrapper {
+    padding: 32px 24px;
+    border-radius: 12px;
+  }
+
+  .form-heading {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .form-input-theatre,
+  .form-textarea-theatre {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    padding: 16px 32px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 70px 8px 24px;
+  }
+
+  .form-wrapper {
+    padding: 24px 16px;
+    margin: 0 -8px;
+    border-radius: 8px;
+  }
+
+  .form-heading {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .form-grid {
+    gap: 12px;
+  }
+
+  .form-input-theatre,
+  .form-textarea-theatre {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    padding: 14px 28px;
+    font-size: 14px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-wrapper {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.form-heading {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.input-group {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.input-group:nth-child(1) { animation-delay: 0.1s; }
+.input-group:nth-child(2) { animation-delay: 0.15s; }
+.input-group:nth-child(3) { animation-delay: 0.2s; }
+.input-group:nth-child(4) { animation-delay: 0.25s; }
+.input-group:nth-child(5) { animation-delay: 0.3s; }
+.input-group:nth-child(6) { animation-delay: 0.35s; }
+.input-group:nth-child(7) { animation-delay: 0.4s; }
+.input-group:nth-child(8) { animation-delay: 0.45s; }
+.input-group:nth-child(9) { animation-delay: 0.5s; }
+
+.submit-btn {
+  animation: fadeInUp 0.5s ease-out 0.6s both;
+}
+
+/* Accessibility */
+.form-input-theatre:focus,
+.form-textarea-theatre:focus {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* Loading State */
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-btn:disabled:hover {
+  transform: none;
+  box-shadow: 0 8px 24px rgba(66, 133, 244, 0.3);
+}
+
+/* Print Styles */
+@media print {
+  .form-container {
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 20px;
+  }
+
+  .form-wrapper {
+    background: #2d2d2d;
+    box-shadow: none;
+    border: 1px solid #555;
+  }
+
+  .form-heading {
+    color: #ffffff;
+    background: none;
+    -webkit-text-fill-color: #ffffff;
+  }
+
+  .form-input-theatre,
+  .form-textarea-theatre {
+    background: #333333;
+    border: 1px solid #777;
+    color: #ffffff;
+  }
+
+  .submit-btn {
+    background: var(--accent-blue);
+    color: #ffffff;
+  }
+}

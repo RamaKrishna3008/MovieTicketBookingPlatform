@@ -1,0 +1,319 @@
+/* MovieTimings.css */
+
+.movie-timings-container {
+  min-height: 100vh;
+  background-color: #111827;
+}
+
+/* Backdrop Section */
+.backdrop-section {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.backdrop-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px);
+}
+
+.backdrop-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+.movie-info-overlay {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.movie-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.movie-poster-timings {
+  flex-shrink: 0;
+  width: 280px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.movie-poster-timings:hover {
+  transform: scale(1.05);
+}
+
+/* Movie Details */
+.movie-details {
+  color: white;
+  flex: 1;
+  max-width: 600px;
+}
+
+.movie-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.movie-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.genre-badge {
+  background-color: #fbbf24;
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.meta-item {
+  color: #d1d5db;
+  font-size: 1rem;
+  position: relative;
+}
+
+.meta-item:not(:last-child)::after {
+  content: "|";
+  margin-left: 1rem;
+  color: #9ca3af;
+}
+
+.movie-description {
+  color: #d1d5db;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-label {
+  font-weight: 600;
+  min-width: 120px;
+}
+
+.info-value {
+  color: #d1d5db;
+}
+
+/* Timings Section */
+.timings-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.timings-title-movie {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 3rem;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.no-timings {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 1.25rem;
+  padding: 4rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dates-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Time Slot Buttons */
+.time-slot {
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.time-slot:not(.housefull):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.time-slot:not(.housefull):active {
+  transform: translateY(0);
+}
+
+/* Occupancy Colors */
+.available {
+  background-color: #10b981 !important;
+  color: white !important;
+}
+
+.available:hover {
+  background-color: #059669 !important;
+}
+
+.filling-fast {
+  background-color: #f59e0b !important;
+  color: black !important;
+}
+
+.filling-fast:hover {
+  background-color: #d97706 !important;
+}
+
+.almost-full {
+  background-color: #ef4444 !important;
+  color: white !important;
+}
+
+.almost-full:hover {
+  background-color: #dc2626 !important;
+}
+
+.housefull {
+  background-color: #000000 !important;
+  color: #9ca3af !important;
+  cursor: not-allowed !important;
+  opacity: 0.7;
+}
+
+.time-text {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.occupancy-text {
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  opacity: 0.9;
+}
+
+/* Loading and Error States */
+.loading-container,
+.error-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #111827;
+}
+
+.loading-text {
+  color: white;
+  font-size: 1.25rem;
+}
+
+.error-text {
+  color: #ef4444;
+  font-size: 1.25rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .movie-content-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .movie-poster-timings {
+    width: 240px;
+    height: 340px;
+  }
+  
+  .movie-title {
+    font-size: 2rem;
+  }
+  
+  .movie-meta {
+    justify-content: center;
+  }
+  
+  .timings-section {
+    padding: 1rem;
+  }
+  
+  .times-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+  }
+  
+  .time-slot {
+    min-height: 50px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .backdrop-section {
+    height: 400px;
+  }
+  
+  .movie-poster-timings {
+    width: 200px;
+    height: 280px;
+  }
+  
+  .movie-title {
+    font-size: 1.75rem;
+  }
+  
+  .times-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Movie Booking Website Dark Theme */
+.user-home-container {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  color: #ffffff;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.user-home-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(143, 138, 241, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(143, 138, 241, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.user-home-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Heading styles */
+.movies-heading {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #8f8af1 50%, #8f8af1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+  position: relative;
+}
+
+.movies-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #8f8af1, #a269f3);
+  border-radius: 2px;
+}
+
+/* Loading, error, and no movies states */
+.loading-state,
+.error-state,
+.no-movies-state {
+  text-align: center;
+  font-size: 1.4em;
+  margin-top: 100px;
+  font-weight: 500;
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(143, 138, 241, 0.2);
+}
+
+.error-state {
+  color: #ff6b6b;
+  border-color: rgba(255, 107, 107, 0.3);
+}
+
+.loading-state {
+  color: #8f8af1;
+  border-color: rgba(143, 138, 241, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.no-movies-state {
+  color: #adb5bd;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.02); opacity: 0.8; }
+}
+
+/* Movie cards container */
+.movie-cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Movie card styles */
+.movie-card-home {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  border: 1px solid rgba(143, 138, 241, 0.2);
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.movie-card-home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(143, 138, 241, 0.1) 0%, rgba(195, 160, 245, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 20px;
+}
+
+.movie-card-home:hover::before {
+  opacity: 1;
+}
+
+.movie-card-home:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 
+    0 25px 50px rgba(143, 138, 241, 0.3),
+    0 0 0 1px rgba(143, 138, 241, 0.4);
+  border-color: #8f8af1;
+}
+
+/* Movie poster image */
+.movie-poster-home {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  position: relative;
+}
+
+.movie-card-home:hover .movie-poster-home {
+  transform: scale(1.05);
+}
+
+/* Movie details container */
+.movie-name {
+  padding: 20px 20px 10px 20px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.2em;
+  color: #ffffff;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Movie language and genre */
+.movie-language {
+  padding: 0 20px 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.movie-language span {
+  background: linear-gradient(135deg, #8f8af1 0%, #6366f1 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 0.85em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(143, 138, 241, 0.3);
+  transition: all 0.3s ease;
+  flex: 1;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.movie-language span:first-child {
+  background: linear-gradient(135deg, #8f8af1 0%, #a78bfa 100%);
+}
+
+.movie-language span:last-child {
+  background: linear-gradient(135deg, #c3a0f5 0%, #8f8af1 100%);
+}
+
+.movie-language span:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(143, 138, 241, 0.5);
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .movie-cards-wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-home-container {
+    padding: 15px;
+  }
+
+  .movies-heading {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+  }
+
+  .movie-cards-wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .movie-poster-home {
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movies-heading {
+    font-size: 2.2rem;
+  }
+
+  .movie-cards-wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .movie-card-home {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .movie-poster-home {
+    height: 280px;
+  }
+
+  .movie-language {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .movie-language span {
+    width: 100%;
+  }
+}
+
+/* Additional cinema-like effects */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.movie-card-home::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #8f8af1, transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.movie-card-home:hover::after {
+  opacity: 1;
+}
+

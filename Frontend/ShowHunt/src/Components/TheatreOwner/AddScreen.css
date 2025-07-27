@@ -1,0 +1,416 @@
+/* AddScreen.css - Dark Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.add-screen-container {
+  min-height: 100vh;
+  padding: 20px 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #111111;
+  position: relative;
+}
+
+/* Add subtle animated background pattern */
+.add-screen-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(139, 155, 247, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 10%, rgba(102, 126, 234, 0.04) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.form-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #1a1a1a 0%, #222222 100%);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  border: 1px solid #333333;
+  backdrop-filter: blur(10px);
+}
+
+.form-header {
+  padding: 15px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #2a2a2a 0%, #333333 100%);
+  border-bottom: 1px solid #444444;
+}
+
+.form-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 70%),
+    radial-gradient(circle at 80% 20%, rgba(139, 155, 247, 0.08) 0%, transparent 70%);
+  opacity: 0.6;
+}
+
+.form-header h3 {
+  text-align: center;
+  color: #8b9bf7;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #667eea, #8b9bf7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(139, 155, 247, 0.3);
+}
+
+.screen-form {
+  padding: 40px;
+  background: #111111;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #e2e8f0;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.form-input,
+.form-textarea {
+  padding: 14px 16px;
+  border: 2px solid #333333;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+  background-color: #1a1a1a;
+  color: #e2e8f0;
+  font-weight: 400;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+  background-color: #222222;
+  transform: translateY(-1px);
+}
+
+.form-input:hover,
+.form-textarea:hover {
+  border-color: #8b9bf7;
+  background-color: #1f1f1f;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #4a5568;
+}
+
+.form-input[readonly] {
+  background-color: #0f0f0f;
+  color: #718096;
+  cursor: not-allowed;
+  border-color: #2d2d2d;
+}
+
+.form-input[readonly]:hover {
+  border-color: #2d2d2d;
+  background-color: #0f0f0f;
+}
+
+/* Number input styling */
+.form-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.form-input[type="number"]::-webkit-outer-spin-button,
+.form-input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.submit-button {
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #8b9bf7 100%);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.submit-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.submit-button:hover::before {
+  left: 100%;
+}
+
+.submit-button:hover {
+  background: linear-gradient(135deg, #4c63d2 0%, #667eea 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.submit-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.button-text {
+  position: relative;
+  z-index: 1;
+}
+
+/* Form validation styles */
+.form-input:invalid {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-input:valid {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* Enhanced focus states with purple glow */
+.form-input:focus:valid {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .add-screen-container {
+    padding: 20px 10px;
+  }
+  
+  .form-container {
+    margin: 0 10px;
+  }
+  
+  .form-header {
+    padding: 20px;
+  }
+  
+  .form-header h3 {
+    font-size: 1.5rem;
+  }
+  
+  .screen-form {
+    padding: 30px 20px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .form-input,
+  .form-textarea {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+  
+  .submit-button {
+    font-size: 14px;
+    padding: 14px 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .screen-form {
+    padding: 20px 15px;
+  }
+  
+  .form-label {
+    font-size: 13px;
+  }
+}
+
+/* Loading state */
+.submit-button:disabled {
+  background: #2d3748;
+  cursor: not-allowed;
+  transform: none;
+  color: #718096;
+  box-shadow: none;
+}
+
+.submit-button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Success and error states - Dark theme versions */
+.form-success {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #34d399;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  margin-bottom: 20px;
+  font-weight: 500;
+  backdrop-filter: blur(5px);
+}
+
+.form-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  margin-bottom: 20px;
+  font-weight: 500;
+  backdrop-filter: blur(5px);
+}
+
+/* Enhanced smooth animations */
+.form-container {
+  animation: slideUpGlow 0.6s ease-out;
+}
+
+@keyframes slideUpGlow {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    box-shadow: 0 0 0 rgba(102, 126, 234, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Enhanced focus ring for accessibility */
+.form-input:focus-visible,
+.form-textarea:focus-visible,
+.submit-button:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Dark theme scrollbar styling */
+.add-screen-container ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.add-screen-container ::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 4px;
+}
+
+.add-screen-container ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #333333 0%, #667eea 100%);
+  border-radius: 4px;
+}
+
+.add-screen-container ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #667eea 0%, #8b9bf7 100%);
+}
+
+/* Selection styling for dark theme */
+.add-screen-container ::selection {
+  background: rgba(102, 126, 234, 0.3);
+  color: #e2e8f0;
+}
+
+/* Autofill styling for dark theme */
+.form-input:autofill,
+.form-input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #1a1a1a inset;
+  -webkit-text-fill-color: #e2e8f0 !important;
+}
+
+.form-input:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0 30px #1f1f1f inset;
+  -webkit-text-fill-color: #e2e8f0 !important;
+}
+
+.form-input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px #222222 inset;
+  -webkit-text-fill-color: #e2e8f0 !important;
+}
+
+/* Loading spinner for submit button */
+.submit-button.loading::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Input field glow effect on focus */
+.form-input:focus,
+.form-textarea:focus {
+  box-shadow: 
+    0 0 0 3px rgba(102, 126, 234, 0.2),
+    0 0 20px rgba(102, 126, 234, 0.1);
+}
